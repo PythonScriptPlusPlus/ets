@@ -1,17 +1,18 @@
 <template>
 	<div>
-		<desktop-header />
-		<div>
-			<router-link to="/">
-				Home
-			</router-link> |
-			<router-link to="/about">
-				About
-			</router-link>
-		</div>
+		<desktop-header class="header" />
 		<router-view />
+		<custom-footer class="foot" />
 	</div>
 </template>
 
-<style lang="scss">
+<style lang="scss" scoped>
+.header {
+	position: sticky;
+}
+
+.foot {
+	position: absolute;
+	bottom: 0;
+}
 </style>

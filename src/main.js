@@ -6,10 +6,12 @@ import router from './router';
 import store from './store';
 //component
 import DesktopHeader from './components/DesktopHeader.vue';
+import CustomFooter from './components/CustomFooter.vue';
 
 Vue.config.productionTip = false;
 
 Vue.component('DesktopHeader',DesktopHeader);
+Vue.component('CustomFooter',CustomFooter);
 
 new Vue({
 	router,

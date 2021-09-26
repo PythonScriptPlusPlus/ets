@@ -1,0 +1,58 @@
+<template>
+	<div class="footer">
+		<p class="footer__about">
+			данный сайт является проектом 10 класса
+		</p>
+		<div class="add">
+			<p class="add__text">
+				нет непонятной темы?
+			</p>
+			<a class="link add__link">
+				добавить тему
+			</a>
+		</div>
+	</div>
+</template>
+
+<script>
+import { Component, Vue } from 'vue-property-decorator';
+
+@Component({})
+
+export default class CustomFooter extends Vue {};
+</script>
+
+<style lang="scss" scoped>
+.footer {
+	background-color: $subcolor;
+	width: 100vw;
+	height: 100px;
+	padding: 15px;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+
+	&__about {
+		margin: 0px;
+		color: $white;
+		font-size: 24px;
+		width: 25%;
+	}
+}
+
+.add {
+	display: flex;
+	flex-direction: column;
+	align-items: flex-end;
+
+	&__text {
+		margin: 0px;
+		color: $white;
+		font-size: 24px;
+	}
+
+	&__link {
+		font-size: 24px;
+	}
+}
+</style>
