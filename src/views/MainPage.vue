@@ -3,7 +3,7 @@
 		<div class="about">
 			<iframe
 				class="about__video"
-				src="https://www.youtube.com/embed/gOjXEDIhDuk"
+				src=""
 				title="YouTube video player"
 				frameborder="0"
 				allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
@@ -26,7 +26,7 @@
 			>
 				<iframe
 					class="popular__video"
-					src="https://www.youtube.com/embed/gOjXEDIhDuk"
+					src=""
 					title="YouTube video player"
 					frameborder="0"
 					allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
@@ -52,13 +52,23 @@ export default {
 		return {
 			videos: [ 
 				{
-					name: 'test',
-					description : 'text',
+					name: 'Название темы 1',
+					description : 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla imperdiet faucibus molestie. Donec rhoncus...',
 					picture: '',
 				},
 				{
-					name: 'video2',
-					description : 'text, but different',
+					name: 'Название темы 2',
+					description : 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla imperdiet faucibus molestie. Donec rhoncus...',
+					picture: '',
+				},
+				{
+					name: 'Название темы 3',
+					description : 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla imperdiet faucibus molestie. Donec rhoncus...',
+					picture: '',
+				},
+				{
+					name: 'Название темы 4',
+					description : 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla imperdiet faucibus molestie. Donec rhoncus...',
 					picture: '',
 				}
 			],
@@ -70,6 +80,7 @@ export default {
 <style lang="scss" scoped>
 .main {
 	width: 100vw;
+	font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 }
 
 .about {
@@ -80,7 +91,8 @@ export default {
 	display: flex;
 
 	&__video {
-		width: 40%;
+		background-color: $black;
+		width: 40vw;
 		height: calc(40vw * 9 / 16);
 	}
 
@@ -103,22 +115,24 @@ export default {
 }
 
 .popular {
-	display: flex;
-	flex-direction: row;
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	grid-gap: 40px;
 	width: 100vw;
 	padding: 20px;
-	flex-wrap: wrap;
 
 	&__wrapper {
-		display: flex;
-		flex-direction: row;
-		width: 50%;
-		height: calc(50vw * 9 / 16 * 0.48);
-		margin-bottom: 50px;
+		display: grid;
+		grid-template-columns: 1fr 1fr;
+		height: calc((100vw - 80px) * 9 / 64);
 	}
 
 	&__video {
-		width: 50%;
+		background-color: $description;
+		background-image: url(/img/testpic.jpg);
+		background-size: cover;
+		width: 100%;
+		height: 100%;
 	}
 
 	&__tagline {

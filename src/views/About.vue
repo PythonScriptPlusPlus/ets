@@ -1,6 +1,6 @@
 <template>
 	<div>
-		about
+		<category-pop-up />
 	</div>
 </template>
 

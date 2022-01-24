@@ -7,11 +7,13 @@ import store from './store';
 //component
 import DesktopHeader from './components/DesktopHeader.vue';
 import CustomFooter from './components/CustomFooter.vue';
+import CategoryPopUp from './components/CategoryPopUp.vue';
 
 Vue.config.productionTip = false;
 
 Vue.component('DesktopHeader',DesktopHeader);
 Vue.component('CustomFooter',CustomFooter);
+Vue.component('CategoryPopUp',CategoryPopUp);
 
 new Vue({
 	router,
