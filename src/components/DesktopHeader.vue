@@ -4,10 +4,7 @@
 			Easier Than School
 		</h1>
 		<div class="header__wrap">
-			<p class="header__categories">
-				категории
-			</p>
-			<div class="header__arrow" />
+			<category-pop-up />
 		</div>
 		<div
 			class="header__search"
