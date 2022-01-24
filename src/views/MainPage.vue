@@ -80,7 +80,6 @@ export default {
 <style lang="scss" scoped>
 .main {
 	width: 100vw;
-	font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 }
 
 .about {
