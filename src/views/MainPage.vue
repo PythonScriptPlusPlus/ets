@@ -11,7 +11,7 @@
 			/>
 			<div class="about__tagline">
 				<p class="about__title">
-					Proident in ea esse aute eu amet pariatur duis do laborum cillum.
+					О нас - что такое "Easier than school"; для чего он нужен
 				</p>
 				<p class="about__description">
 					Labore eiusmod dolore et sint dolor qui ad do. Incididunt dolore fugiat aliqua enim labore deserunt culpa. Velit reprehenderit nulla voluptate dolore voluptate ea anim laboris. Quis elit irure id consequat eu duis dolor exercitation sint veniam.
@@ -24,13 +24,9 @@
 				:key="video.name"
 				class="popular__wrapper"
 			>
-				<iframe
+				<img
 					class="popular__video"
-					src=""
-					title="YouTube video player"
-					frameborder="0"
-					allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-					allowfullscreen
+					:style="'background-image: url('+ video.picture +')'"
 				/>
 				<div class="popular__tagline">
 					<p class="popular__title">
@@ -52,25 +48,20 @@ export default {
 		return {
 			videos: [ 
 				{
-					name: 'Название темы 1',
-					description : 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla imperdiet faucibus molestie. Donec rhoncus...',
-					picture: '',
+					name: 'Перевод единиц измерения',
+					description : 'Единицы измерения - очень полезная вещь. Они нужны буквально для всего! Масса? Есть килограммы, граммы...',
+					picture: '/img/previews/messurement.png',
 				},
 				{
-					name: 'Название темы 2',
-					description : 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla imperdiet faucibus molestie. Donec rhoncus...',
-					picture: '',
+					name: 'Часовые пояса',
+					description : 'Часовые пояса - это очень важная тема. Без них кто-то бы просыпался 10:00, а кто-то в 17:00, и это далеко не от сбитого режима сна...',
+					picture: '/img/previews/timezones.png',
 				},
 				{
-					name: 'Название темы 3',
-					description : 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla imperdiet faucibus molestie. Donec rhoncus...',
-					picture: '',
+					name: 'Комбинаторика',
+					description : 'Комбинаторика - наука, как можно понять из названия, про комбинации и различное расположение объектов. Зачем оно нужно?',
+					picture: '/img/previews/combinations.png',
 				},
-				{
-					name: 'Название темы 4',
-					description : 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla imperdiet faucibus molestie. Donec rhoncus...',
-					picture: '',
-				}
 			],
 		};
 	}
@@ -84,15 +75,14 @@ export default {
 
 .about {
 	width: 100%;
-	height: calc(40vw * 9 / 16 + 40px);
 	border-bottom: 1px $black solid;
 	padding: 20px;
 	display: flex;
 
 	&__video {
 		background-color: $black;
+		aspect-ratio: 16/9;
 		width: 40vw;
-		height: calc(40vw * 9 / 16);
 	}
 
 	&__tagline {
@@ -121,17 +111,25 @@ export default {
 	padding: 20px;
 
 	&__wrapper {
+		transition: background-color 0.5s;
 		display: grid;
 		grid-template-columns: 1fr 1fr;
-		height: calc((100vw - 80px) * 9 / 64);
+		height: fit-content;
+
+		&:hover {
+			transition: background 1s ease-out; 
+			//background: rgb(218,218,218);
+			cursor: pointer;
+			background: linear-gradient(90deg, rgba(218,218,218,1) 0%, rgba(218,218,218,1) 38%, rgba(255,255,255,1) 100%);
+		}
 	}
 
 	&__video {
 		background-color: $description;
 		background-image: url(/img/testpic.jpg);
 		background-size: cover;
+		aspect-ratio: 16/9;
 		width: 100%;
-		height: 100%;
 	}
 
 	&__tagline {
@@ -140,7 +138,7 @@ export default {
 	}
 
 	&__title {
-		margin: 0px 10px;
+		margin: 10px 10px 0;
 		font-weight: 600;
 	}
 

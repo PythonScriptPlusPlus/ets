@@ -1,6 +1,9 @@
 <template>
 	<div class="header">
-		<h1 class="header__title">
+		<h1
+			class="header__title"
+			@click="changeRoute('/')"
+		>
 			Easier Than School
 		</h1>
 		<div class="header__wrap">
@@ -17,7 +20,11 @@ import { Component, Vue } from 'vue-property-decorator';
 
 @Component({})
 
-export default class DesktopHeader extends Vue {};
+export default class DesktopHeader extends Vue {
+	changeRoute(route) {
+    	this.$router.push(route).catch(error => {});
+	}
+};
 </script>
 
 <style lang="scss" scoped>
@@ -32,7 +39,8 @@ export default class DesktopHeader extends Vue {};
     &__title {
         padding: 0px 15px;
         border-right: 2px solid $white;
-        color: $white
+        color: $white;
+        cursor: pointer;
     }
 
     &__wrap {

@@ -16,10 +16,15 @@
 		>
 			<p
 				v-for="name in names"
-				:key="name"
-				class="list__name link"
+				:key="name.url"
+				class="list__name"
 			>
-				{{ name }}
+				<router-link
+					class="link"
+					:to="{ name: 'Category', params: { category: name.url }}"
+				>
+					{{ name.title }}
+				</router-link>
 			</p>
 		</div>
 	</div>
@@ -31,7 +36,20 @@ import { Component, Vue } from 'vue-property-decorator';
 @Component({})
 
 export default class CategoryPopUp extends Vue {
-    names = ['География','Математика','Информатика'];
+    names = [
+    	{
+    		title : 'География',
+    		url : 'geography'
+    	},
+    	{
+    		title : 'Математика',
+    		url : 'math'
+    	},
+    	{
+    		title : 'Информатика',
+    		url : 'IT'
+    	},
+    ];
     isUp = true;
 
     popUp() {
