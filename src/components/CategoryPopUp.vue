@@ -5,18 +5,26 @@
 			@click="popUp"
 		>
 			категории
-			<div class="categories__arrow" />
+			<div
+				class="categories__arrow"
+				:style="isUp ? 'transform: rotate(180deg);' : ''"
+			/>
 		</div>
 		<div
 			class="list"
-			:style="isUp ? 'bottom: 0' : 'top: 48px'"
+			:style="isUp ? 'top: -200%' : 'top: 48px'"
 		>
 			<p
 				v-for="name in names"
-				:key="name"
-				class="list__name link"
+				:key="name.url"
+				class="list__name"
 			>
-				{{ name }}
+				<router-link
+					class="link"
+					:to="{ name: 'Category', params: { category: name.url }}"
+				>
+					{{ name.title }}
+				</router-link>
 			</p>
 		</div>
 	</div>
@@ -28,7 +36,20 @@ import { Component, Vue } from 'vue-property-decorator';
 @Component({})
 
 export default class CategoryPopUp extends Vue {
-    names = ['География','Математика','Информатика'];
+    names = [
+    	{
+    		title : 'География',
+    		url : 'geography'
+    	},
+    	{
+    		title : 'Математика',
+    		url : 'math'
+    	},
+    	{
+    		title : 'Информатика',
+    		url : 'IT'
+    	},
+    ];
     isUp = true;
 
     popUp() {
@@ -66,6 +87,7 @@ export default class CategoryPopUp extends Vue {
         height: 25px;
         background-image: url(/img/icons/technical/Arrow-Down.png);
         background-size: cover;
+        transition: transform 0.5s;
     }
 }
 
@@ -76,6 +98,7 @@ export default class CategoryPopUp extends Vue {
     position: absolute;
     border: 4px solid $subcolor;
     border-top: none;
+    transition: top 0.5s;
 
     &__name {
         border-top: 2px solid $white;

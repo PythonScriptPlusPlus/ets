@@ -5,7 +5,7 @@
 		</p>
 		<div class="add">
 			<p class="add__text">
-				нет непонятной темы?
+				нет разбора?
 			</p>
 			<a class="link add__link">
 				добавить тему
@@ -36,7 +36,9 @@ export default class CustomFooter extends Vue {};
 		margin: 0px;
 		color: $white;
 		font-size: 24px;
-		width: 25%;
+		min-width: 25%;
+		max-width: 30%;
+		max-height: 70px;
 	}
 }
 
