@@ -19,7 +19,7 @@
 .notFound {
     width: 80vw;
     height: fit-content;
-    margin: calc(50% - 400px) 10%;
+    margin: calc(50% - 300px) 10vw;
     display: flex;
     align-items: center;
 
