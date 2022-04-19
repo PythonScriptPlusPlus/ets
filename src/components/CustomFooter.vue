@@ -25,7 +25,7 @@ export default class CustomFooter extends Vue {};
 <style lang="scss" scoped>
 .footer {
 	background-color: $subcolor;
-	width: 100vw;
+	//width: 100vw;
 	height: 100px;
 	padding: 15px;
 	display: flex;
