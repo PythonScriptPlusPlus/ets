@@ -11,6 +11,9 @@ import CategoryPopUp from './components/CategoryPopUp.vue';
 import Geography from './components/subjects/Geography.vue';
 import InfoT from './components/subjects/IT.vue';
 import Mathe from './components/subjects/Math.vue';
+import VidMeas from './components/videos/Measurements.vue';
+import VidTime from './components/videos/NotTimeZones.vue';
+import VidComb from './components/videos/Combinatorics.vue';
 
 Vue.config.productionTip = false;
 
@@ -20,6 +23,9 @@ Vue.component('CategoryPopUp',CategoryPopUp);
 Vue.component('Geography',Geography);
 Vue.component('InfoT',InfoT);
 Vue.component('Mathe',Mathe);
+Vue.component('VidMeas',VidMeas);
+Vue.component('VidTime',VidTime);
+Vue.component('VidComb',VidComb);
 
 new Vue({
 	router,

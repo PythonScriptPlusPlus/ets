@@ -17,6 +17,7 @@
 
 .header {
 	position: sticky;
+	z-index: 5;
 }
 
 .foot {

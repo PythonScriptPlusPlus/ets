@@ -1,5 +1,5 @@
 <template>
-	<div class="main">
+	<div>
 		<div class="about">
 			<iframe
 				class="about__video"
@@ -23,6 +23,7 @@
 				v-for="video in videos"
 				:key="video.name"
 				class="popular__wrapper"
+				@click="changeRoute(video.url)"
 			>
 				<img
 					class="popular__video"
@@ -42,39 +43,42 @@
 </template>
 
 <script>
-export default {
-	name: 'MainPage',
-	data() {
-		return {
-			videos: [ 
-				{
-					name: 'Перевод единиц измерения',
-					description : 'Единицы измерения - очень полезная вещь. Они нужны буквально для всего! Масса? Есть килограммы, граммы...',
-					picture: '/img/previews/messurement.png',
-				},
-				{
-					name: 'Часовые пояса',
-					description : 'Часовые пояса - это очень важная тема. Без них кто-то бы просыпался 10:00, а кто-то в 17:00, и это далеко не от сбитого режима сна...',
-					picture: '/img/previews/timezones.png',
-				},
-				{
-					name: 'Комбинаторика',
-					description : 'Комбинаторика - наука, как можно понять из названия, про комбинации и различное расположение объектов. Зачем оно нужно?',
-					picture: '/img/previews/combinations.png',
-				},
-			],
-		};
+import { Component, Vue } from 'vue-property-decorator';
+
+@Component({})
+
+export default class MainPage extends Vue {
+	videos = [
+		{
+			name: 'Перевод единиц измерения',
+			description : 'Единицы измерения - очень полезная вещь. Они нужны буквально для всего! Масса? Есть килограммы, граммы...',
+			picture: '/img/previews/messurement.png',
+			url : '/category/math/measurements'
+		},
+		{
+			name: 'Часовые пояса',
+			description : 'Часовые пояса - это очень важная тема. Без них кто-то бы просыпался 10:00, а кто-то в 17:00, и это далеко не от сбитого режима сна...',
+			picture: '/img/previews/timezones.png',
+			url : '/category/math/timezones'
+		},
+		{
+			name: 'Комбинаторика',
+			description : 'Комбинаторика - наука, как можно понять из названия, про комбинации и различное расположение объектов. Зачем оно нужно?',
+			picture: '/img/previews/combinations.png',
+			url : '/category/IT/combinatorics'
+		},
+	];
+
+	changeRoute(route) {
+		this.$router.push(route).catch(error => {});
 	}
 };
 </script>
 
 <style lang="scss" scoped>
-.main {
-	width: 100vw;
-}
 
 .about {
-	width: 100%;
+	//width: 100%;
 	border-bottom: 1px $black solid;
 	padding: 20px;
 	display: flex;
@@ -107,7 +111,7 @@ export default {
 	display: grid;
 	grid-template-columns: 1fr 1fr;
 	grid-gap: 40px;
-	width: 100vw;
+	//width: 100vw;
 	padding: 20px;
 
 	&__wrapper {

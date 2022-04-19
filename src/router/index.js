@@ -4,6 +4,7 @@ import MainPage from '../views/MainPage.vue';
 import About from '../views/About.vue';
 import Page404 from '../views/Page404.vue';
 import Category from '../views/Category.vue';
+import VideoTemp from '../views/Video.vue';
 
 Vue.use(VueRouter);
 
@@ -22,6 +23,11 @@ const routes = [
 		path: '/category/:category',
 		name: 'Category',
 		component: Category
+	},
+	{
+		path: '/category/:category/:vid',
+		name: 'VideoTemp',
+		component: VideoTemp
 	},
 	{
 		path: '/:catchAll(.*)',

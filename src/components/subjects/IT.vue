@@ -4,6 +4,7 @@
 			v-for="video in videos"
 			:key="video.name"
 			class="it__wrapper"
+			@click="changeRoute(video.url)"
 		>
 			<div
 				class="it__picture"
@@ -74,8 +75,12 @@ export default class InfoT extends Vue {
 			picture : 'background-image: url(/img/previews/combinations.png)',
 			name : 'комбинаторика',
 			description : 'наука, как можно понять из названия, про комбинации и различное расположение объектов. Зачем оно нужно?',
-			url : ''
+			url : '/category/IT/combinatorics'
 		}
-	]
+	];
+
+	changeRoute(route) {
+		this.$router.push(route).catch(error => {});
+	}
 };
 </script>

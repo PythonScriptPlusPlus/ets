@@ -29,7 +29,7 @@ export default class DesktopHeader extends Vue {
 
 <style lang="scss" scoped>
 .header {
-    width: 100vw;
+    //width: 100vw;
     height: 50px;
     background-color: $main-color;
     display: flex;
