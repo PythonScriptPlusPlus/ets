@@ -1,20 +1,18 @@
 <template>
 	<div>
-		<div class="about">
-			<iframe
+		<div
+			class="about" 
+			@click="changeRoute('/about')"
+		>
+			<div
 				class="about__video"
-				src=""
-				title="YouTube video player"
-				frameborder="0"
-				allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-				allowfullscreen
 			/>
 			<div class="about__tagline">
 				<p class="about__title">
-					О нас - что такое "Easier than school"; для чего он нужен
+					Что такое "Easier than school"? Для чего нужна эта платформа?
 				</p>
 				<p class="about__description">
-					Labore eiusmod dolore et sint dolor qui ad do. Incididunt dolore fugiat aliqua enim labore deserunt culpa. Velit reprehenderit nulla voluptate dolore voluptate ea anim laboris. Quis elit irure id consequat eu duis dolor exercitation sint veniam.
+					"Easier than school" - вспомогательная платформа с видеоуроками для 5-6 классов
 				</p>
 			</div>
 		</div>
@@ -78,13 +76,21 @@ export default class MainPage extends Vue {
 <style lang="scss" scoped>
 
 .about {
-	//width: 100%;
 	border-bottom: 1px $black solid;
 	padding: 20px;
 	display: flex;
+	transition: background-color 0.3s; 
+
+	&:hover {
+		transition: background-color 0.3s; 
+		background-color: rgb(218,218,218);
+		cursor: pointer;
+	}
 
 	&__video {
 		background-color: $black;
+		background-image: url(/img/previews/preview.png);
+		background-size: cover;
 		aspect-ratio: 16/9;
 		width: 40vw;
 	}

@@ -7,7 +7,10 @@
 			<p class="add__text">
 				нет разбора?
 			</p>
-			<a class="link add__link">
+			<a
+				class="link add__link"
+				@click="changeRoute('/add_video')"
+			>
 				добавить тему
 			</a>
 		</div>
@@ -19,7 +22,11 @@ import { Component, Vue } from 'vue-property-decorator';
 
 @Component({})
 
-export default class CustomFooter extends Vue {};
+export default class CustomFooter extends Vue {
+	changeRoute(route) {
+		this.$router.push(route).catch(error => {});
+	}
+};
 </script>
 
 <style lang="scss" scoped>
