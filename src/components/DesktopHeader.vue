@@ -66,12 +66,12 @@ export default class DesktopHeader extends Vue {
         width: 40px;
         height: 40px;
         margin: 5px;
-        background-image: url(/img/icons/technical/Magnifier.png);
+        //background-image: url(/img/icons/technical/Magnifier.png);
         background-size: cover;
         //background-repeat: no-repeat;
         //background-position-y: top;
         //background-position-x: right;
-        border-left: 2px solid $white;
+        //border-left: 2px solid $white;
         padding-left: 10px;
     }
 }
