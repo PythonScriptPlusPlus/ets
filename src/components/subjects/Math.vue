@@ -74,13 +74,13 @@ export default class Mathe extends Vue {
 		{
 			picture : '/img/previews/timezones.png',
 			name : 'Часовые пояса',
-			description : 'это очень важная тема. Без них кто-то бы просыпался 10:00, а кто-то в 17:00, и это далеко не от сбитого режима сна.',
+			description : 'Это очень важная тема. Без них кто-то бы просыпался 10:00, а кто-то в 17:00, и это далеко не от сбитого режима сна.',
 			url : '/category/math/timezones'
 		},
 		{
 			picture : '/img/previews/messurement.png',
 			name : 'Единицы измерения',
-			description : 'очень полезная вещь. Они нужны буквально для всего! Масса? Есть килограммы, граммы, тонны...',
+			description : 'Очень полезная вещь. Они нужны буквально для всего! Масса? Есть килограммы, граммы, тонны...',
 			url : '/category/math/measurements'
 		},
 	];

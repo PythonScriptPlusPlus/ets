@@ -74,7 +74,7 @@ export default class InfoT extends Vue {
 		{
 			picture : 'background-image: url(/img/previews/combinations.png)',
 			name : 'комбинаторика',
-			description : 'наука, как можно понять из названия, про комбинации и различное расположение объектов. Зачем оно нужно?',
+			description : 'Наука, как можно понять из названия, про комбинации и различное расположение объектов. Зачем оно нужно?',
 			url : '/category/IT/combinatorics'
 		}
 	];

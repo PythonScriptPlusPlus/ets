@@ -29,7 +29,6 @@ export default class DesktopHeader extends Vue {
 
 <style lang="scss" scoped>
 .header {
-    //width: 100vw;
     height: 50px;
     background-color: $main-color;
     display: flex;
@@ -68,12 +67,12 @@ export default class DesktopHeader extends Vue {
         height: 40px;
         margin: 5px;
         background-image: url(/img/icons/technical/Magnifier.png);
-        background-size: contain;
-        background-repeat: no-repeat;
-        background-position-y: top;
-        background-position-x: right;
+        background-size: cover;
+        //background-repeat: no-repeat;
+        //background-position-y: top;
+        //background-position-x: right;
         border-left: 2px solid $white;
-        padding-left:10px;
+        padding-left: 10px;
     }
 }
 </style>
